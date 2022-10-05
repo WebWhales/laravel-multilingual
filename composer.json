@@ -1,17 +1,17 @@
 {
-    "name": ":vendor_slug/:package_slug",
-    "description": ":package_description",
+    "name": "webwhales/dlf-hackaton-2022",
+    "description": "This is my package dlf-hackaton-2022",
     "keywords": [
-        ":vendor_name",
+        "Web Whales",
         "laravel",
-        ":package_slug"
+        "dlf-hackaton-2022"
     ],
-    "homepage": "https://github.com/:vendor_slug/:package_slug",
+    "homepage": "https://github.com/WebWhales/dlf-hackaton-2022",
     "license": "MIT",
     "authors": [
         {
-            "name": ":author_name",
-            "email": "author@domain.com",
+            "name": "Ronald Edelschaap",
+            "email": "ronald.edelschaap@webwhales.nl",
             "role": "Developer"
         }
     ],
@@ -35,13 +35,13 @@
     },
     "autoload": {
         "psr-4": {
-            "VendorName\\Skeleton\\": "src",
-            "VendorName\\Skeleton\\Database\\Factories\\": "database/factories"
+            "WebWhales\\DlfHackaton2022\\": "src",
+            "WebWhales\\DlfHackaton2022\\Database\\Factories\\": "database/factories"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "VendorName\\Skeleton\\Tests\\": "tests"
+            "WebWhales\\DlfHackaton2022\\Tests\\": "tests"
         }
     },
     "scripts": {
@@ -51,15 +51,19 @@
         "format": "vendor/bin/pint"
     },
     "config": {
-        "sort-packages": true
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true,
+            "phpstan/extension-installer": true
+        }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "VendorName\\Skeleton\\SkeletonServiceProvider"
+                "WebWhales\\DlfHackaton2022\\DlfHackaton2022ServiceProvider"
             ],
             "aliases": {
-                "Skeleton": "VendorName\\Skeleton\\Facades\\Skeleton"
+                "DlfHackaton2022": "WebWhales\\DlfHackaton2022\\Facades\\DlfHackaton2022"
             }
         }
     },

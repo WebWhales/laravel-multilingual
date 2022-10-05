@@ -1,12 +1,12 @@
 <?php
 
-namespace VendorName\Skeleton;
+namespace WebWhales\DlfHackaton2022;
 
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use VendorName\Skeleton\Commands\SkeletonCommand;
+use WebWhales\DlfHackaton2022\Commands\DlfHackaton2022Command;
 
-class SkeletonServiceProvider extends PackageServiceProvider
+class DlfHackaton2022ServiceProvider extends PackageServiceProvider
 {
     public function configurePackage(Package $package): void
     {
@@ -16,10 +16,10 @@ class SkeletonServiceProvider extends PackageServiceProvider
          * More info: https://github.com/spatie/laravel-package-tools
          */
         $package
-            ->name('skeleton')
+            ->name('dlf-hackaton-2022')
             ->hasConfigFile()
             ->hasViews()
-            ->hasMigration('create_skeleton_table')
-            ->hasCommand(SkeletonCommand::class);
+            ->hasMigration('create_dlf-hackaton-2022_table')
+            ->hasCommand(DlfHackaton2022Command::class);
     }
 }

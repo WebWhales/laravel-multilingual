@@ -1,12 +1,12 @@
 <?php
 
-namespace VendorName\Skeleton\Commands;
+namespace WebWhales\DlfHackaton2022\Commands;
 
 use Illuminate\Console\Command;
 
-class SkeletonCommand extends Command
+class DlfHackaton2022Command extends Command
 {
-    public $signature = 'skeleton';
+    public $signature = 'dlf-hackaton-2022';
 
     public $description = 'My command';
 
