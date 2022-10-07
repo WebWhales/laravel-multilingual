@@ -1,4 +1,4 @@
-# This is my package dlf-hackaton-2022
+# Team Web Whales DLF Hackathon 2022
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/webwhales/dlf-hackaton-2022.svg?style=flat-square)](https://packagist.org/packages/webwhales/dlf-hackaton-2022)
 [![run-tests](https://github.com/WebWhales/dlf-hackaton-2022/actions/workflows/run-tests.yml/badge.svg?branch=master)](https://github.com/WebWhales/dlf-hackaton-2022/actions/workflows/run-tests.yml)
