@@ -12,13 +12,19 @@ use WebWhales\LaravelMultilingual\Models\Locale;
 
 class LaravelMultilingualServiceProvider extends PackageServiceProvider
 {
+    public function register()
+    {
+        $this->app->register(ViewServiceProvider::class);
+        $this->app->register(MiddlewareServiceProvider::class);
+    }
+
     public function boot()
     {
         Blueprint::macro('multilingual', function (Blueprint $table) {
             $table->foreignIdFor(Locale::class);
         });
 
-        $this->headerWebMiddleware();
+        //$this->headerWebMiddleware();
     }
 
     private function headerWebMiddleware(): void
