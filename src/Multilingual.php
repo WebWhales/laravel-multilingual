@@ -7,7 +7,6 @@ namespace WebWhales\LaravelMultilingual;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Collection;
-use Illuminate\Support\Facades\DB;
 use WebWhales\LaravelMultilingual\Models\Locale;
 use WebWhales\LaravelMultilingual\Models\ModelTranslation;
 use WebWhales\LaravelMultilingual\Scopes\MultilingualScope;
@@ -45,7 +44,7 @@ trait Multilingual
                                       ->orWhere('translation_id', $this->id);
                             })
                             ->get()
-                            ->map(fn(ModelTranslation $t) => $t->translatable_id !== $this->id ? $t->translatable_id :
+                            ->map(fn (ModelTranslation $t) => $t->translatable_id !== $this->id ? $t->translatable_id :
                                 $t->translation_id)
                             ->diff([$this->id])
                             ->toArray()
