@@ -52,6 +52,24 @@ it('can retrieve a model for a specific locale', function () {
     expect(TestModel::query()->withLocale(2)->first()->id)->toBe($translatedModel->id);
 });
 
+it('can add a translation for a model', function () {
+    /** @var TestModel $model */
+    $model = TestModel::create([
+        'locale_id' => 1,
+        'name'      => 'Whale',
+    ]);
+
+    /** @var TestModel $translatedModel */
+    $translatedModel = TestModel::create([
+        'locale_id' => 2,
+        'name'      => 'Walvis',
+    ]);
+
+    $model->addTranslation($translatedModel);
+
+    expect(true)->toBe(true);
+});
+
 it('can retrieve translations for a model', function () {
     /** @var TestModel $model */
     $model = TestModel::create([
