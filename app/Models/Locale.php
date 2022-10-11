@@ -6,7 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Locale extends Model
 {
-
     /**
      * The attributes that are mass assignable.
      *
@@ -18,7 +17,7 @@ class Locale extends Model
         'slug',
         'name',
         'is_rtl',
-        'default_language'
+        'default_language',
     ];
 
     protected $casts = [
