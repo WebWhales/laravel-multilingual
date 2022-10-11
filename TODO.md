@@ -1,7 +1,7 @@
 # To Do
 
 [ ] Init
-   - There should be a `locales` table:
+   - **Amer:** There should be a `locales` table
       - ID
       - locale
       - slug
