@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 use WebWhales\DlfHackaton2022\Tests\TestSupport\TestModel;
 
 it('can retrieve translations for a model', function () {

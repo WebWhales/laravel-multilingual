@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace WebWhales\DlfHackaton2022;
 
 use Illuminate\Database\Eloquent\Relations\MorphToMany;
