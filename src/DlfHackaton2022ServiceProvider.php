@@ -3,6 +3,7 @@
 namespace WebWhales\DlfHackaton2022;
 
 use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Blade;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
@@ -29,19 +30,26 @@ class DlfHackaton2022ServiceProvider extends PackageServiceProvider
 
         Blade::directive('hrefLangTags', function () {
             // ToDo: Getting the href languages for the current Model post.
-            // I assume this is a collection.
             $postLocales = collect();
 
-            $postLocales->each(function ($locale) {
-                $href = localized_route(
-                    request()->route()->getName(),
-                    request()->route()->parameters(),
-                    $locale
-                );
-
-                echo '<link rel="alternate" hreflang="' . $locale . '" href="' . $href . '">';
+            $this->getPostLocaleUrls($postLocales)->each(function ($href, $local) {
+                echo '<link rel="alternate" hreflang="' . $local . '" href="' . $href . '">';
             });
         });
+    }
+
+    public function getPostLocaleUrls(Collection $postLocales): Collection
+    {
+        $postLocaleUrls = [];
+        $postLocales->each(function ($locale) use (&$postLocaleUrls) {
+            $postLocaleUrls[$locale] = localized_route(
+                request()->route()->getName(),
+                request()->route()->parameters(),
+                $locale
+            );
+        });
+
+        return collect($postLocaleUrls);
     }
 
     public function configurePackage(Package $package): void
