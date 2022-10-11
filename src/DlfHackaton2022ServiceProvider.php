@@ -11,8 +11,8 @@ class DlfHackaton2022ServiceProvider extends PackageServiceProvider
 {
     public function boot()
     {
-        Blueprint::macro('multilingual', function () {
-            $this->bigInteger('local_id');
+        Blueprint::macro('multilingual', function (Blueprint $table) {
+            $table->bigInteger('local_id');
         });
     }
 
