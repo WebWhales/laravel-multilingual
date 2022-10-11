@@ -12,10 +12,11 @@
 [ ] Routing
    - Being able to define the main language (with/without language slug).
 [ ] Database
-   - When visiting a URL like domain.example/nl/ translated content should be displayed for the view of the specific Model.
-   - Being able to insert/update models for a specific language.
-   - Models should use a trait `Multilingual`.
-   - Being able to retrieve all translations for a model.
+   - When visiting a URL like domain.example/nl/ translated content should be displayed for the view of the specific 
+     Model (TDD).
+   - Being able to insert/update models for a specific language (TDD).
+   - Models should use a trait `Multilingual` (TDD).
+   - Being able to retrieve all translations for a model (TDD).
 
 [ ] View
 <<<<<<< HEAD
