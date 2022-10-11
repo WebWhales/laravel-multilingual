@@ -1,6 +1,6 @@
 <?php
 
-namespace ebWhales\DlfHackaton2022\Models;
+namespace WebWhales\DlfHackaton2022\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -21,7 +21,6 @@ class Locale extends Model
     ];
 
     protected $casts = [
-        'name' => 'boolean',
         'is_rtl' => 'boolean',
         'default_language' => 'boolean',
     ];
