@@ -1,14 +1,14 @@
 blank_issues_enabled: true
 contact_links:
   - name: Ask a question
-    url: https://github.com/WebWhales/dlf-hackaton-2022/discussions/new?category=q-a
+    url: https://github.com/WebWhales/laravel-multilingual/discussions/new?category=q-a
     about: Ask the community for help
   - name: Request a feature
-    url: https://github.com/WebWhales/dlf-hackaton-2022/discussions/new?category=ideas
+    url: https://github.com/WebWhales/laravel-multilingual/discussions/new?category=ideas
     about: Share ideas for new features
   - name: Report a security issue
-    url: https://github.com/WebWhales/dlf-hackaton-2022/security/policy
+    url: https://github.com/WebWhales/laravel-multilingual/security/policy
     about: Learn how to notify us for sensitive bugs
   - name: Report a bug
-    url: https://github.com/WebWhales/dlf-hackaton-2022/issues/new
+    url: https://github.com/WebWhales/laravel-multilingual/issues/new
     about: Report a reproducible bug
