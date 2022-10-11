@@ -6,13 +6,14 @@ use Illuminate\Database\Schema\Blueprint;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 use WebWhales\DlfHackaton2022\Commands\DlfHackaton2022Command;
+use WebWhales\DlfHackaton2022\Models\Locale;
 
 class DlfHackaton2022ServiceProvider extends PackageServiceProvider
 {
     public function boot()
     {
         Blueprint::macro('multilingual', function (Blueprint $table) {
-            $table->bigInteger('local_id');
+            $table->foreignIdFor(Locale::class);
         });
     }
 
