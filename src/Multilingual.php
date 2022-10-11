@@ -38,18 +38,22 @@ trait Multilingual
      */
     public function getTranslations(): Collection
     {
-        return self::query()->whereIn('id',
-            ModelTranslation::query()->where('translatable_type')
-                            ->where(function (Builder $query) {
-                                $query->where('translatable_id', $this->id)
-                                      ->orWhere('translation_id', $this->id);
-                            })
-                            ->get()
-                            ->map(fn(ModelTranslation $t) => $t->translatable_id !== $this->id ? $t->translatable_id :
-                                $t->translation_id)
-                            ->diff([$this->id])
-                            ->toArray()
-        )->get();
+
+        return self::query()
+            ->withoutLocale()
+            ->whereIn('id',
+                ModelTranslation::query()
+                    ->where('translatable_type', self::class)
+                    ->where(function (Builder $query) {
+                        $query->where('translatable_id', $this->id)
+                            ->orWhere('translation_id', $this->id);
+                    })
+                    ->get()
+                    ->map(fn(ModelTranslation $t) => $t->translatable_id !== $this->id ? $t->translatable_id :
+                        $t->translation_id)
+                    ->diff($this->id)
+                    ->toArray()
+            )->get();
     }
 
     public function translations()
