@@ -6,7 +6,8 @@
       - locale
       - slug
       - nice name
-      - is_rtl (default true|false)
+      - is_rtl (true|false, default false)
+      - default language (true|false, default false)
    - Locales are cached to minimize extra queries.
 
 [ ] Routing
