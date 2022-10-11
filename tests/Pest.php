@@ -2,6 +2,6 @@
 
 declare(strict_types=1);
 
-use WebWhales\DlfHackaton2022\Tests\TestCase;
+use WebWhales\LaravelMultilingual\Tests\TestCase;
 
 uses(TestCase::class)->in(__DIR__);
