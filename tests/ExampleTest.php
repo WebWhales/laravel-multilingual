@@ -26,12 +26,12 @@ it('can retrieve translations for a model', function () {
     /** @var TestModel $model */
     $model = TestModel::create([
         'locale_id' => 1,
-        'name'      => 'Whale',
+        'name' => 'Whale',
     ]);
 
     $translatedModel = TestModel::create([
         'locale_id' => 2,
-        'name'      => 'Walvis',
+        'name' => 'Walvis',
     ]);
 
     $translations = $model->translations()->get();
