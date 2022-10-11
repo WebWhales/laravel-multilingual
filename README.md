@@ -1,9 +1,9 @@
-# Team Web Whales DLF Hackathon 2022
+# Laravel Multilingual
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/webwhales/dlf-hackaton-2022.svg?style=flat-square)](https://packagist.org/packages/webwhales/dlf-hackaton-2022)
-[![run-tests](https://github.com/WebWhales/dlf-hackaton-2022/actions/workflows/run-tests.yml/badge.svg?branch=master)](https://github.com/WebWhales/dlf-hackaton-2022/actions/workflows/run-tests.yml)
-[![Fix PHP code style issues](https://github.com/WebWhales/dlf-hackaton-2022/actions/workflows/fix-php-code-style-issues.yml/badge.svg)](https://github.com/WebWhales/dlf-hackaton-2022/actions/workflows/fix-php-code-style-issues.yml)
-[![Total Downloads](https://img.shields.io/packagist/dt/webwhales/dlf-hackaton-2022.svg?style=flat-square)](https://packagist.org/packages/webwhales/dlf-hackaton-2022)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/webwhales/laravel-multilingual.svg?style=flat-square)](https://packagist.org/packages/webwhales/laravel-multilingual)
+[![run-tests](https://github.com/WebWhales/laravel-multilingual/actions/workflows/run-tests.yml/badge.svg?branch=master)](https://github.com/WebWhales/laravel-multilingual/actions/workflows/run-tests.yml)
+[![Fix PHP code style issues](https://github.com/WebWhales/laravel-multilingual/actions/workflows/fix-php-code-style-issues.yml/badge.svg)](https://github.com/WebWhales/laravel-multilingual/actions/workflows/fix-php-code-style-issues.yml)
+[![Total Downloads](https://img.shields.io/packagist/dt/webwhales/laravel-multilingual.svg?style=flat-square)](https://packagist.org/packages/webwhales/laravel-multilingual)
 
 This is where your description should go. Limit it to a paragraph or two. Consider adding a small example.
 
