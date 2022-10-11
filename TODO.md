@@ -18,7 +18,7 @@
    - Models should use a trait.
 
 [ ] View
-    - Add href language tags to prevent duplicated content.
+   - Add href language tags to prevent duplicated content.
 
 [ ] Documentation
    - Installation
