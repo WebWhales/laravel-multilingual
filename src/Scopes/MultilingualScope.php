@@ -10,7 +10,7 @@ use WebWhales\DlfHackaton2022\Models\Locale;
 class MultilingualScope implements Scope
 {
     /**
-     * All of the extensions to be added to the builder.
+     * All the extensions to be added to the builder.
      *
      * @var string[]
      */
