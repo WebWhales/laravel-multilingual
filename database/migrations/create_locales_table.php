@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('slug')->index();
             $table->string('name');
             $table->boolean('is_rtl')->default(false);
-            $table->boolean('default_language')->default(false);
+            $table->boolean('is_default')->default(false);
             $table->timestamps();
         });
     }
