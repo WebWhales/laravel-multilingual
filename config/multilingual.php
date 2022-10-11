@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-// config for WebWhales/DlfHackaton2022
+// config for WebWhales/LaravelMultilingual
 return [
 
 ];
