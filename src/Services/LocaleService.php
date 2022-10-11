@@ -34,9 +34,40 @@ class LocaleService
             ->first();
 
         if (! $locale instanceof Locale) {
-            throw new LocaleNotFoundException($slug);
+            throw LocaleNotFoundException::bySlug($slug);
         }
 
         return $locale->locale;
+    }
+
+    /**
+     * @throws LocaleNotFoundException
+     */
+    public function getLocaleModelByLocale(string $locale): Locale
+    {
+        $locale = Locale::whereLocale($locale)
+            ->first();
+
+        if (! $locale instanceof Locale) {
+            throw LocaleNotFoundException::byLocale($locale);
+        }
+
+        return $locale;
+    }
+
+    /**
+     * @throws LocaleNotFoundException
+     */
+    public function getLocaleIdByLocale(string $locale): int
+    {
+        $locale = Locale::whereLocale($locale)
+            ->select('id')
+            ->first();
+
+        if (! $locale instanceof Locale) {
+            throw LocaleNotFoundException::byLocale($locale);
+        }
+
+        return $locale->id;
     }
 }
