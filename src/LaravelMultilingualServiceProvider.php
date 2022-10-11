@@ -7,7 +7,6 @@ namespace WebWhales\LaravelMultilingual;
 use Illuminate\Database\Schema\Blueprint;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use WebWhales\LaravelMultilingual\Commands\LaravelMultilingualCommand;
 use WebWhales\LaravelMultilingual\Models\Locale;
 
 class LaravelMultilingualServiceProvider extends PackageServiceProvider
