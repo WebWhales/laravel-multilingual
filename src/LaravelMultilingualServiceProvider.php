@@ -2,16 +2,15 @@
 
 declare(strict_types=1);
 
-namespace WebWhales\DlfHackaton2022;
+namespace WebWhales\LaravelMultilingual;
 
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Routing\Router;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use WebWhales\DlfHackaton2022\Commands\DlfHackaton2022Command;
-use WebWhales\DlfHackaton2022\Models\Locale;
+use WebWhales\LaravelMultilingual\Models\Locale;
 
-class DlfHackaton2022ServiceProvider extends PackageServiceProvider
+class LaravelMultilingualServiceProvider extends PackageServiceProvider
 {
     public function boot()
     {
@@ -35,11 +34,7 @@ class DlfHackaton2022ServiceProvider extends PackageServiceProvider
          *
          * More info: https://github.com/spatie/laravel-package-tools
          */
-        $package
-            ->name('dlf-hackaton-2022')
-            ->hasConfigFile()
-            ->hasViews()
-            ->hasMigration('create_dlf-hackaton-2022_table')
-            ->hasCommand(DlfHackaton2022Command::class);
+        $package->name('laravel-multilingual')
+                ->hasMigrations(['create_locales_table']);
     }
 }

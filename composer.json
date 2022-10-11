@@ -1,10 +1,10 @@
 {
-    "name": "webwhales/dlf-hackaton-2022",
-    "description": "This is my package dlf-hackaton-2022",
+    "name": "webwhales/laravel-multilingual",
+    "description": "Make your Laravel application multilingual",
     "keywords": [
         "Web Whales",
         "laravel",
-        "dlf-hackaton-2022"
+        "multilingual"
     ],
     "homepage": "https://github.com/WebWhales/dlf-hackaton-2022",
     "license": "MIT",
@@ -38,13 +38,13 @@
     },
     "autoload": {
         "psr-4": {
-            "WebWhales\\DlfHackaton2022\\": "src",
-            "WebWhales\\DlfHackaton2022\\Database\\Factories\\": "database/factories"
+            "WebWhales\\LaravelMultilingual\\": "src",
+            "WebWhales\\LaravelMultilingual\\Database\\Factories\\": "database/factories"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "WebWhales\\DlfHackaton2022\\Tests\\": "tests"
+            "WebWhales\\LaravelMultilingual\\Tests\\": "tests"
         }
     },
     "scripts": {
@@ -63,10 +63,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "WebWhales\\DlfHackaton2022\\DlfHackaton2022ServiceProvider"
+                "LaravelMultilingualServiceProvider"
             ],
             "aliases": {
-                "DlfHackaton2022": "WebWhales\\DlfHackaton2022\\Facades\\DlfHackaton2022"
+                "LaravelMultilingual": "WebWhales\\LaravelMultilingual\\Facades\\LaravelMultilingual"
             }
         }
     },

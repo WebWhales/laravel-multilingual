@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace WebWhales\DlfHackaton2022\Tests;
+namespace WebWhales\LaravelMultilingual\Tests;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 use Orchestra\Testbench\TestCase as Orchestra;
-use WebWhales\DlfHackaton2022\DlfHackaton2022ServiceProvider;
-use WebWhales\DlfHackaton2022\Models\Locale;
+use WebWhales\LaravelMultilingual\LaravelMultilingualServiceProvider;
+use WebWhales\LaravelMultilingual\Models\Locale;
 
 class TestCase extends Orchestra
 {
@@ -18,14 +18,14 @@ class TestCase extends Orchestra
         parent::setUp();
 
         Factory::guessFactoryNamesUsing(
-            fn (string $modelName) => 'WebWhales\\DlfHackaton2022\\Database\\Factories\\'.class_basename($modelName).'Factory'
+            fn (string $modelName) => 'WebWhales\\LaravelMultilingual\\Database\\Factories\\'.class_basename($modelName).'Factory'
         );
     }
 
     protected function getPackageProviders($app)
     {
         return [
-            DlfHackaton2022ServiceProvider::class,
+            LaravelMultilingualServiceProvider::class,
         ];
     }
 
