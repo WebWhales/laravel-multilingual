@@ -8,7 +8,8 @@ use Illuminate\Routing\Router;
 use Illuminate\Support\ServiceProvider;
 use WebWhales\LaravelMultilingual\Http\Middleware\LocalResponseHeader;
 
-class MiddlewareServiceProvider extends ServiceProvider {
+class MiddlewareServiceProvider extends ServiceProvider
+{
     public function boot()
     {
         $router = $this->app->make(Router::class);
