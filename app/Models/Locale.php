@@ -17,7 +17,7 @@ class Locale extends Model
         'slug',
         'name',
         'is_rtl',
-        'default_language'
+        'default_language',
     ];
 
     protected $casts = [
