@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\MorphToMany;
 use WebWhales\DlfHackaton2022\Models\Locale;
 use WebWhales\DlfHackaton2022\Scopes\MultilingualScope;
+use WebWhales\DlfHackaton2022\Tests\TestSupport\TestModel;
 
 /**
  * @method static \Illuminate\Database\Eloquent\Builder|\Illuminate\Database\Query\Builder withLocale(Locale|int $locale = null)
@@ -29,9 +30,14 @@ trait Multilingual
         });
     }
 
-    public function translations(): MorphToMany
+    public function translations()
     {
-        return $this->morphToMany(static::class, 'translatable', 'model_translations', relatedPivotKey: 'translation_id');
+        return $this->morphToMany(static::class, 'translatable', 'model_translations','translation_id' , 'translatable_id');
+    }
+
+
+    public function attachTranslation(TestModel $translatedModel){
+        return $this->translations()->save($translatedModel);
     }
 
     /**

@@ -65,7 +65,7 @@ it('can add a translation for a model', function () {
         'name'      => 'Walvis',
     ]);
 
-    $model->addTranslation($translatedModel);
+    $model->attachTranslation($translatedModel);
 
     expect(true)->toBe(true);
 });
