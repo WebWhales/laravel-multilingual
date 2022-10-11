@@ -20,11 +20,7 @@
    - Being able to retrieve all translations for a model (TDD).
 
 [ ] View
-<<<<<<< HEAD
    - Add href language tags to prevent duplicated content.
-=======
-- Add href language tags to prevent duplicated content.
->>>>>>> 6f5bd91 (Update ToDo)
 
 [ ] Documentation
    - Installation
