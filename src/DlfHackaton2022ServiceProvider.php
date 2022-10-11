@@ -30,7 +30,7 @@ class DlfHackaton2022ServiceProvider extends PackageServiceProvider
             ->name('dlf-hackaton-2022')
             ->hasConfigFile()
             ->hasViews()
-            ->hasMigration('create_dlf-hackaton-2022_table')
+            ->hasMigrations('create_locales_table')
             ->hasCommand(DlfHackaton2022Command::class);
     }
 }
