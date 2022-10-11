@@ -11,7 +11,7 @@ class ModelTranslation extends Pivot
     /**
      * The attributes that are mass assignable.
      *
-     * @var array
+     * @var array<string>
      */
     protected $fillable = [
         'translatable_type',

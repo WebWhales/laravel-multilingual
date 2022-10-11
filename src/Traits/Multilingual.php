@@ -2,15 +2,15 @@
 
 declare(strict_types=1);
 
-namespace WebWhales\LaravelMultilingual;
+namespace WebWhales\LaravelMultilingual\Traits;
 
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Collection;
-use Illuminate\Support\Facades\DB;
 use WebWhales\LaravelMultilingual\Models\Locale;
 use WebWhales\LaravelMultilingual\Models\ModelTranslation;
 use WebWhales\LaravelMultilingual\Scopes\MultilingualScope;
+use WebWhales\LaravelMultilingual\Services\LocaleService;
 use WebWhales\LaravelMultilingual\Tests\TestSupport\TestModel;
 
 /**
@@ -26,9 +26,8 @@ trait Multilingual
         static::addGlobalScope(new MultilingualScope);
 
         static::creating(function (Model $model) {
-            // Todo: recognize current locale
             if (empty($model->locale_id)) {
-                $model->locale_id = Locale::query()->first()->id;
+                $model->locale_id = app(LocaleService::class)->getCurrentLocaleId();
             }
         });
     }
@@ -49,7 +48,7 @@ trait Multilingual
                             ->orWhere('translation_id', $this->id);
                     })
                     ->get()
-                    ->map(fn(ModelTranslation $t) => $t->translatable_id !== $this->id ? $t->translatable_id :
+                    ->map(fn (ModelTranslation $t) => $t->translatable_id !== $this->id ? $t->translatable_id :
                         $t->translation_id)
                     ->diff($this->id)
                     ->toArray()

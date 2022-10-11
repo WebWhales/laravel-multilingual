@@ -11,7 +11,7 @@ class Locale extends Model
     /**
      * The attributes that are mass assignable.
      *
-     * @var array
+     * @var array<string>
      */
     protected $fillable = [
         'id',
@@ -19,11 +19,11 @@ class Locale extends Model
         'slug',
         'name',
         'is_rtl',
-        'default_language',
+        'is_default',
     ];
 
     protected $casts = [
         'is_rtl' => 'boolean',
-        'default_language' => 'boolean',
+        'is_default' => 'boolean',
     ];
 }
