@@ -7,7 +7,9 @@ namespace WebWhales\LaravelMultilingual\Scopes;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Scope;
+use WebWhales\LaravelMultilingual\Exceptions\LocaleNotFoundException;
 use WebWhales\LaravelMultilingual\Models\Locale;
+use WebWhales\LaravelMultilingual\Services\LocaleService;
 
 class MultilingualScope implements Scope
 {
@@ -21,9 +23,9 @@ class MultilingualScope implements Scope
     public function apply(Builder $builder, Model $model)
     {
         $column = $this->getLocaleIdColumn($builder);
-        $locale = $this->retrieveCurrentLocale();
+        $localeId = $this->retrieveCurrentLocaleId();
 
-        $builder->where($column, $locale->id);
+        $builder->where($column, $localeId);
     }
 
     /**
@@ -64,8 +66,11 @@ class MultilingualScope implements Scope
         return $builder->getModel()->getLocaleIdColumn();
     }
 
-    private function retrieveCurrentLocale(): Locale
+    /**
+     * @throws LocaleNotFoundException
+     */
+    private function retrieveCurrentLocaleId(): int
     {
-        return Locale::query()->first();
+        return app(LocaleService::class)->getCurrentLocaleId();
     }
 }
