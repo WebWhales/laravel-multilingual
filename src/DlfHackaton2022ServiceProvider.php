@@ -20,11 +20,11 @@ class DlfHackaton2022ServiceProvider extends PackageServiceProvider
             // ToDo: Getting the content direction from the current selected language.
             $isRtl = '';
 
-            return 'dir="' . $isRtl ?? 'ltr' . '"';
+            return 'dir="'.$isRtl ?? 'ltr'.'"';
         });
 
         Blade::directive('contentLangTag', function () {
-            return 'lang="' . str_replace('_', '-', app()->getLocale()) . '"';
+            return 'lang="'.str_replace('_', '-', app()->getLocale()).'"';
         });
 
         Blade::directive('hrefLangTags', function () {
@@ -39,7 +39,7 @@ class DlfHackaton2022ServiceProvider extends PackageServiceProvider
                     $locale
                 );
 
-                echo '<link rel="alternate" hreflang="' . $locale . '" href="' . $href . '">';
+                echo '<link rel="alternate" hreflang="'.$locale.'" href="'.$href.'">';
             });
         });
     }
