@@ -31,7 +31,7 @@ trait Multilingual
 
     public function translations(): MorphToMany
     {
-        return $this->morphToMany(static::class, 'translatable', 'model_translations');
+        return $this->morphToMany(static::class, 'translatable', 'model_translations', relatedPivotKey: 'translation_id');
     }
 
     /**

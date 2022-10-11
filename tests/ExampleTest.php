@@ -22,6 +22,36 @@ it('can insert a model for the current locale', function () {
     expect($model->locale_id)->toBe(2);
 });
 
+it('can retrieve a model for the current locale', function () {
+    /** @var TestModel $model */
+    $model = TestModel::create([
+        'locale_id' => 1,
+        'name'      => 'Whale',
+    ]);
+
+    TestModel::create([
+        'locale_id' => 2,
+        'name'      => 'Walvis',
+    ]);
+
+    expect(TestModel::query()->latest()->first()->id)->toBe($model->id);
+});
+
+it('can retrieve a model for a specific locale', function () {
+    TestModel::create([
+        'locale_id' => 1,
+        'name'      => 'Whale',
+    ]);
+
+    /** @var TestModel $translatedModel */
+    $translatedModel = TestModel::create([
+        'locale_id' => 2,
+        'name'      => 'Walvis',
+    ]);
+
+    expect(TestModel::query()->withLocale(2)->first()->id)->toBe($translatedModel->id);
+});
+
 it('can retrieve translations for a model', function () {
     /** @var TestModel $model */
     $model = TestModel::create([

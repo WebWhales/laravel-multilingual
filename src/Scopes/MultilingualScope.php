@@ -12,13 +12,6 @@ use WebWhales\DlfHackaton2022\Models\Locale;
 class MultilingualScope implements Scope
 {
     /**
-     * All the extensions to be added to the builder.
-     *
-     * @var string[]
-     */
-    protected $extensions = ['Localized', 'WithoutLocale'];
-
-    /**
      * Apply the scope to a given Eloquent query builder.
      *
      * @param  \Illuminate\Database\Eloquent\Builder  $builder
@@ -41,7 +34,7 @@ class MultilingualScope implements Scope
      */
     public function extend(Builder $builder)
     {
-        $builder->macro('WithLocale', function (Builder $builder, Locale|int $locale) {
+        $builder->macro('withLocale', function (Builder $builder, Locale|int $locale) {
             $column = $this->getLocaleIdColumn($builder);
 
             if ($locale instanceof Locale) {
@@ -51,7 +44,7 @@ class MultilingualScope implements Scope
             return $builder->withoutGlobalScope($this)->where($column, $locale);
         });
 
-        $builder->macro('WithoutLocale', function (Builder $builder) {
+        $builder->macro('withoutLocale', function (Builder $builder) {
             return $builder->withoutGlobalScope($this);
         });
     }
