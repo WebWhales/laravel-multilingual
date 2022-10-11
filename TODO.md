@@ -16,6 +16,9 @@
    - Being able to insert/update models for a specific language.
    - Models should use a trait.
 
+[ ] View
+    - Add href language tags to prevent duplicated content.
+
 [ ] Documentation
    - Installation
      - Composer
