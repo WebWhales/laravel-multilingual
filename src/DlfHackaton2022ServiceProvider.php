@@ -33,7 +33,7 @@ class DlfHackaton2022ServiceProvider extends PackageServiceProvider
             $postLocales = collect();
 
             $this->getPostLocaleUrls($postLocales)->each(function ($href, $local) {
-                echo '<link rel="alternate" hreflang="' . $local . '" href="' . $href . '">';
+                echo '<link rel="alternate" hreflang="'.$local.'" href="'.$href.'">';
             });
         });
     }
