@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Blade;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 use WebWhales\LaravelMultilingual\Models\Locale;
+use WebWhales\LaravelMultilingual\Services\LocaleService;
 
 class LaravelMultilingualServiceProvider extends PackageServiceProvider
 {
@@ -20,10 +21,14 @@ class LaravelMultilingualServiceProvider extends PackageServiceProvider
         });
 
         Blade::directive('isContentLtrTag', function () {
-            // ToDo: Getting the content direction from the current selected language.
-            $isRtl = '';
+            $isRtl = app(LocaleService::class)->getCurrentLocale()->is_rtl;
 
-            return 'dir="'.$isRtl ?? 'ltr'.'"';
+            $dir = 'ltr';
+            if ($isRtl) {
+                $dir = 'rtl';
+            }
+
+            return 'dir="'.$dir.'"';
         });
 
         Blade::directive('contentLangTag', function () {
