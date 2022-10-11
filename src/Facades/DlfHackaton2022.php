@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace WebWhales\DlfHackaton2022\Facades;
 
 use Illuminate\Support\Facades\Facade;
