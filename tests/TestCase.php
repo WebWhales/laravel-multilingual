@@ -21,7 +21,6 @@ class TestCase extends Orchestra
             fn (string $modelName) => 'WebWhales\\DlfHackaton2022\\Database\\Factories\\'.class_basename($modelName).'Factory'
         );
 
-
         $this->seedTables();
     }
 
