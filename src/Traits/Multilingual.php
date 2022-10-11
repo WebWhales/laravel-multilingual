@@ -60,7 +60,7 @@ trait Multilingual
         return $this->morphToMany(static::class, 'translatable', 'model_translations', 'translation_id', 'translatable_id');
     }
 
-    public function attachTranslation(TestModel $translatedModel)
+    public function attachTranslation(self $translatedModel)
     {
         return $translatedModel->translations()->save($this);
     }
