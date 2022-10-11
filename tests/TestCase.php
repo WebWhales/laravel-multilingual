@@ -20,6 +20,8 @@ class TestCase extends Orchestra
         Factory::guessFactoryNamesUsing(
             fn (string $modelName) => 'WebWhales\\LaravelMultilingual\\Database\\Factories\\'.class_basename($modelName).'Factory'
         );
+
+        $this->seedTables();
     }
 
     protected function getPackageProviders($app)
@@ -54,5 +56,22 @@ class TestCase extends Orchestra
             $table->foreignIdFor(Locale::class);
             $table->text('name')->nullable();
         });
+    }
+
+    private function seedTables(): void
+    {
+        Locale::create([
+            'locale' => 'en',
+            'slug' => 'en',
+            'name' => 'English',
+            'default_language' => true,
+        ]);
+
+        Locale::create([
+            'locale' => 'nl',
+            'slug' => 'nl',
+            'name' => 'Nederlands',
+            'default_language' => false,
+        ]);
     }
 }
