@@ -63,7 +63,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "LaravelMultilingualServiceProvider"
+                "WebWhales\\LaravelMultilingual\\LaravelMultilingualServiceProvider"
             ],
             "aliases": {
                 "LaravelMultilingual": "WebWhales\\LaravelMultilingual\\Facades\\LaravelMultilingual"
