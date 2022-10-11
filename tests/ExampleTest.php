@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-use WebWhales\DlfHackaton2022\Tests\TestSupport\TestModel;
+use WebWhales\LaravelMultilingual\Tests\TestSupport\TestModel;
 
 it('can insert a model for the current locale', function () {
     /** @var TestModel $model */

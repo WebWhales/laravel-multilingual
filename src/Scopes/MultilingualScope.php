@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace WebWhales\DlfHackaton2022\Scopes;
+namespace WebWhales\LaravelMultilingual\Scopes;
 
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Scope;
-use WebWhales\DlfHackaton2022\Models\Locale;
+use WebWhales\LaravelMultilingual\Models\Locale;
 
 class MultilingualScope implements Scope
 {

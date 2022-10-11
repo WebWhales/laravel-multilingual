@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace WebWhales\DlfHackaton2022;
+namespace WebWhales\LaravelMultilingual;
 
 use Illuminate\Database\Eloquent\Model;
-use WebWhales\DlfHackaton2022\Models\Locale;
-use WebWhales\DlfHackaton2022\Scopes\MultilingualScope;
-use WebWhales\DlfHackaton2022\Tests\TestSupport\TestModel;
+use WebWhales\LaravelMultilingual\Models\Locale;
+use WebWhales\LaravelMultilingual\Scopes\MultilingualScope;
+use WebWhales\LaravelMultilingual\Tests\TestSupport\TestModel;
 
 /**
  * @method static \Illuminate\Database\Eloquent\Builder|\Illuminate\Database\Query\Builder withLocale(Locale|int $locale = null)
