@@ -28,23 +28,18 @@ class DlfHackaton2022ServiceProvider extends PackageServiceProvider
         });
 
         Blade::directive('hrefLangTags', function () {
-            // ToDo: Getting the current model post.
-            $post = '';
-
             // ToDo: Getting the href languages for the current Model post.
             // I assume this is a collection.
             $postLocales = collect();
 
-            // ToDo:
-            // - Looping over the translations of the current model.
-            // - Using a route helper to generate the URL's based on the Translations.
-            $postLocales->each(function ($language) use ($post) {
+            $postLocales->each(function ($locale) {
+                $href = localized_route(
+                    request()->route()->getName(),
+                    request()->route()->parameters(),
+                    $locale
+                );
 
-                // Problems:
-                // - Routes defined by the developer will have different parameters, I cannot simply call the route for the given Model.
-                // It should go through a middleware of some kind..
-                // - ...
-                echo route(request()->route()->getName(), ['post' => $post, 'locale' => 'de']);
+                echo '<link rel="alternate" hreflang="' . $locale . '" href="' . $href . '">';
             });
         });
     }
