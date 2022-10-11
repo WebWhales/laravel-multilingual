@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace WebWhales\DlfHackaton2022\Http\Middleware;
+namespace WebWhales\LaravelMultilingual\Http\Middleware;
 
 use Closure;
 
-class localResponseHeader
+class LocalResponseHeader
 {
     public function handle($request, Closure $next)
     {
