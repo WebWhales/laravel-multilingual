@@ -71,7 +71,7 @@ class TestCase extends Orchestra
             'locale' => 'nl',
             'slug' => 'nl',
             'name' => 'Nederlands',
-            'default_language' => true,
+            'default_language' => false,
         ]);
     }
 }
