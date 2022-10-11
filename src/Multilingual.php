@@ -36,7 +36,7 @@ trait Multilingual
 
     public function attachTranslation(TestModel $translatedModel)
     {
-        return $this->translations()->save($translatedModel);
+        return $translatedModel->translations()->save($this)  ;
     }
 
     /**

@@ -77,12 +77,15 @@ it('can retrieve translations for a model', function () {
         'name' => 'Whale',
     ]);
 
-    $translatedModel = TestModel::create([
+    $translatedModel =  TestModel::create([
         'locale_id' => 2,
         'name' => 'Walvis',
     ]);
 
-    $translations = $model->translations()->get();
+
+    $translatedModel->attachTranslation($model);
+
+    $translations = $model->refresh()->translations()->get();
 
     $this->assertFalse(
         $translations->contains($model)
