@@ -82,9 +82,9 @@ it('can retrieve translations for a model', function () {
         'name' => 'Walvis',
     ]);
 
-    $translatedModel->attachTranslation($model);
+    $model->attachTranslation($translatedModel);
 
-    $translations = $model->refresh()->translations()->get();
+    $translations = $model->getTranslations();
 
     $this->assertFalse(
         $translations->contains($model)
