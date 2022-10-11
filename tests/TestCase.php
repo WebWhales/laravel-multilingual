@@ -18,6 +18,9 @@ class TestCase extends Orchestra
         Factory::guessFactoryNamesUsing(
             fn (string $modelName) => 'WebWhales\\DlfHackaton2022\\Database\\Factories\\'.class_basename($modelName).'Factory'
         );
+
+
+        $this->seedTables();
     }
 
     protected function getPackageProviders($app)
@@ -32,7 +35,6 @@ class TestCase extends Orchestra
         config()->set('database.default', 'testing');
 
         $this->migrateTables();
-        $this->seedTables();
     }
 
     private function migrateTables(): void
