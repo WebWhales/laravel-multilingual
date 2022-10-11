@@ -4,7 +4,9 @@ declare(strict_types=1);
 
 namespace WebWhales\DlfHackaton2022;
 
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\MorphToMany;
+use WebWhales\DlfHackaton2022\Models\Locale;
 use WebWhales\DlfHackaton2022\Scopes\MultilingualScope;
 
 /**
@@ -18,6 +20,13 @@ trait Multilingual
     public static function bootMultilingual(): void
     {
         static::addGlobalScope(new MultilingualScope);
+
+        static::creating(function (Model $model) {
+            // Todo: recognize current locale
+            if (empty($model->locale_id)) {
+                $model->locale_id = Locale::query()->first()->id;
+            }
+        });
     }
 
     public function translations(): MorphToMany
