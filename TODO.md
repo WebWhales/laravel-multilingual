@@ -1,12 +1,13 @@
 # To Do
 
 [ ] Init
-   - There should be a `locales` table:
+   - **Amer:** There should be a `locales` table
       - ID
       - locale
       - slug
       - nice name
-      - is_rtl (default true|false)
+      - is_rtl (true|false, default false)
+      - default language (true|false, default false)
    - Locales are cached to minimize extra queries.
 
 [ ] Routing
@@ -21,6 +22,7 @@
 
 [ ] View
    - Add href language tags to prevent duplicated content.
+   - Add dir to opening HTML tag to enable right-left content.
 
 [ ] Documentation
    - Installation
