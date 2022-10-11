@@ -32,6 +32,7 @@ class TestCase extends Orchestra
         config()->set('database.default', 'testing');
 
         $this->migrateTables();
+        $this->seedTables();
     }
 
     private function migrateTables(): void
@@ -52,5 +53,22 @@ class TestCase extends Orchestra
             $table->foreignIdFor(Locale::class);
             $table->text('name')->nullable();
         });
+    }
+
+    private function seedTables(): void
+    {
+        Locale::create([
+            'locale' => 'en',
+            'slug' => 'en',
+            'name' => 'English',
+            'default_language' => true,
+        ]);
+
+        Locale::create([
+            'locale' => 'nl',
+            'slug' => 'nl',
+            'name' => 'Nederlands',
+            'default_language' => true,
+        ]);
     }
 }

@@ -5,6 +5,7 @@ namespace WebWhales\DlfHackaton2022\Scopes;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Scope;
+use WebWhales\DlfHackaton2022\Models\Locale;
 
 class MultilingualScope implements Scope
 {
@@ -70,5 +71,6 @@ class MultilingualScope implements Scope
 
     private function retrieveCurrentLocale(): Locale
     {
+        return Locale::query()->first();
     }
 }
