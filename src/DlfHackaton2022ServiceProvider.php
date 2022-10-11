@@ -23,7 +23,7 @@ class DlfHackaton2022ServiceProvider extends PackageServiceProvider
             return 'dir="'.$contentDirection ?? 'ltr'.'"';
         });
 
-        Blade::directive( 'href_language', function() {
+        Blade::directive('href_language', function () {
             // ToDo: Getting the current model post.
             $post = '';
 
@@ -34,12 +34,11 @@ class DlfHackaton2022ServiceProvider extends PackageServiceProvider
             // ToDo:
             // - Looping over the translations of the current model.
             // - Using a route helper to generate the URL's based on the Translations.
-            $postLanguages->each( function( $language ) use ( $post ) {
-
+            $postLanguages->each(function ($language) use ($post) {
                 // Problems:
                 // - Routes defined by the developer will have different parameters.
                 // - ...
-                echo route( request()->route()->getName(), ['post' => $post, 'lang' => 'de']);
+                echo route(request()->route()->getName(), ['post' => $post, 'lang' => 'de']);
             });
         });
     }
