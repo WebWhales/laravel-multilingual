@@ -1,12 +1,14 @@
 <?php
 
-namespace WebWhales\DlfHackaton2022\Commands;
+declare(strict_types=1);
+
+namespace WebWhales\LaravelMultilingual\Commands;
 
 use Illuminate\Console\Command;
 
-class DlfHackaton2022Command extends Command
+class LaravelMultilingualCommand extends Command
 {
-    public $signature = 'dlf-hackaton-2022';
+    public $signature = 'laravel-multilingual';
 
     public $description = 'My command';
 

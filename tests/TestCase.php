@@ -1,10 +1,15 @@
 <?php
 
-namespace WebWhales\DlfHackaton2022\Tests;
+declare(strict_types=1);
+
+namespace WebWhales\LaravelMultilingual\Tests;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 use Orchestra\Testbench\TestCase as Orchestra;
-use WebWhales\DlfHackaton2022\DlfHackaton2022ServiceProvider;
+use WebWhales\LaravelMultilingual\LaravelMultilingualServiceProvider;
+use WebWhales\LaravelMultilingual\Models\Locale;
 
 class TestCase extends Orchestra
 {
@@ -13,14 +18,16 @@ class TestCase extends Orchestra
         parent::setUp();
 
         Factory::guessFactoryNamesUsing(
-            fn (string $modelName) => 'WebWhales\\DlfHackaton2022\\Database\\Factories\\'.class_basename($modelName).'Factory'
+            fn (string $modelName) => 'WebWhales\\LaravelMultilingual\\Database\\Factories\\'.class_basename($modelName).'Factory'
         );
+
+        $this->seedTables();
     }
 
     protected function getPackageProviders($app)
     {
         return [
-            DlfHackaton2022ServiceProvider::class,
+            LaravelMultilingualServiceProvider::class,
         ];
     }
 
@@ -28,9 +35,43 @@ class TestCase extends Orchestra
     {
         config()->set('database.default', 'testing');
 
-        /*
-        $migration = include __DIR__.'/../database/migrations/create_dlf-hackaton-2022_table.php.stub';
-        $migration->up();
-        */
+        $this->migrateTables();
+    }
+
+    private function migrateTables(): void
+    {
+        $migrations = [
+            'create_locales_table',
+            'create_model_translations_table',
+        ];
+
+        foreach ($migrations as $migration) {
+            $migration = include __DIR__."/../database/migrations/$migration.php";
+            $migration->up();
+        }
+
+        Schema::create('test_models', function (Blueprint $table) {
+            $table->increments('id');
+            //$table->multilingual();
+            $table->foreignIdFor(Locale::class);
+            $table->text('name')->nullable();
+        });
+    }
+
+    private function seedTables(): void
+    {
+        Locale::create([
+            'locale' => 'en',
+            'slug' => 'en',
+            'name' => 'English',
+            'default_language' => true,
+        ]);
+
+        Locale::create([
+            'locale' => 'nl',
+            'slug' => 'nl',
+            'name' => 'Nederlands',
+            'default_language' => false,
+        ]);
     }
 }
