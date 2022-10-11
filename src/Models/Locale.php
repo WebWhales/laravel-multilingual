@@ -19,11 +19,11 @@ class Locale extends Model
         'slug',
         'name',
         'is_rtl',
-        'default_language',
+        'is_default',
     ];
 
     protected $casts = [
         'is_rtl' => 'boolean',
-        'default_language' => 'boolean',
+        'is_default' => 'boolean',
     ];
 }

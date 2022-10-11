@@ -20,4 +20,9 @@ class LocaleNotFoundException extends \Exception
     {
         return new self("Locale with locale '{$locale}' not found.");
     }
+
+    public static function noLocales(): self
+    {
+        return new self('Locale table is empty.');
+    }
 }

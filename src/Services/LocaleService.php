@@ -70,4 +70,25 @@ class LocaleService
 
         return $locale->id;
     }
+
+    public function getDefaultLocaleId(): int
+    {
+        $locale = Locale::whereIsDefault(true)
+            ->select('id')
+            ->first();
+
+        if (! $locale instanceof Locale) {
+            throw LocaleNotFoundException::noLocales();
+        }
+
+        return $locale->id;
+    }
+
+    /**
+     * @throws LocaleNotFoundException
+     */
+    public function getCurrentLocaleId(): int
+    {
+        return $this->getLocaleIdByLocale(app()->getLocale());
+    }
 }
