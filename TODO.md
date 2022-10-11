@@ -22,7 +22,7 @@
 
 [ ] View
    - Add href language tags to prevent duplicated content.
-
+   - Add dir to opening HTML tag to enable right-left content.
 [ ] Documentation
    - Installation
      - Composer
