@@ -18,27 +18,14 @@ composer require webwhales/laravel-multilingual
 You can publish and run the migrations with:
 
 ```bash
-php artisan vendor:publish --tag="dlf-hackaton-2022-migrations"
+php artisan vendor:publish --tag="laravel-multilingual-migrations"
 php artisan migrate
 ```
 
 You can publish the config file with:
 
 ```bash
-php artisan vendor:publish --tag="dlf-hackaton-2022-config"
-```
-
-This is the contents of the published config file:
-
-```php
-return [
-];
-```
-
-Optionally, you can publish the views using
-
-```bash
-php artisan vendor:publish --tag="dlf-hackaton-2022-views"
+php artisan vendor:publish --tag="laravel-multilingual-config"
 ```
 
 ## Usage
