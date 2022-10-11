@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace WebWhales\DlfHackaton2022;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\MorphToMany;
 use WebWhales\DlfHackaton2022\Models\Locale;
 use WebWhales\DlfHackaton2022\Scopes\MultilingualScope;
 use WebWhales\DlfHackaton2022\Tests\TestSupport\TestModel;
@@ -32,11 +31,11 @@ trait Multilingual
 
     public function translations()
     {
-        return $this->morphToMany(static::class, 'translatable', 'model_translations','translation_id' , 'translatable_id');
+        return $this->morphToMany(static::class, 'translatable', 'model_translations', 'translation_id', 'translatable_id');
     }
 
-
-    public function attachTranslation(TestModel $translatedModel){
+    public function attachTranslation(TestModel $translatedModel)
+    {
         return $this->translations()->save($translatedModel);
     }
 
