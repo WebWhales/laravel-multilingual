@@ -22,9 +22,10 @@ class DlfHackaton2022ServiceProvider extends PackageServiceProvider
         $this->headerWebMiddleware();
     }
 
-    private function headerWebMiddleware(): void {
+    private function headerWebMiddleware(): void
+    {
         $router = $this->app->make(Router::class);
-        $router->pushMiddlewareToGroup('web', );
+        $router->pushMiddlewareToGroup('web');
     }
 
     public function configurePackage(Package $package): void
