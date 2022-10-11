@@ -77,11 +77,10 @@ it('can retrieve translations for a model', function () {
         'name' => 'Whale',
     ]);
 
-    $translatedModel =  TestModel::create([
+    $translatedModel = TestModel::create([
         'locale_id' => 2,
         'name' => 'Walvis',
     ]);
-
 
     $translatedModel->attachTranslation($model);
 
