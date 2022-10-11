@@ -1,5 +1,6 @@
 includes:
     - phpstan-baseline.neon
+    - ./vendor/nunomaduro/larastan/extension.neon
 
 parameters:
     level: 4
@@ -11,4 +12,5 @@ parameters:
     checkOctaneCompatibility: true
     checkModelProperties: true
     checkMissingIterableValueType: false
-
+    databaseMigrationsPath:
+        - database/migrations
