@@ -11,7 +11,6 @@ use WebWhales\LaravelMultilingual\Models\Locale;
 use WebWhales\LaravelMultilingual\Models\ModelTranslation;
 use WebWhales\LaravelMultilingual\Scopes\MultilingualScope;
 use WebWhales\LaravelMultilingual\Services\LocaleService;
-use WebWhales\LaravelMultilingual\Tests\TestSupport\TestModel;
 
 /**
  * @method static \Illuminate\Database\Eloquent\Builder|\Illuminate\Database\Query\Builder withLocale(Locale|int $locale = null)
@@ -37,7 +36,6 @@ trait Multilingual
      */
     public function getTranslations(): Collection
     {
-
         return self::query()
             ->withoutLocale()
             ->whereIn('id',
