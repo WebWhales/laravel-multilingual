@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace WebWhales\DlfHackaton2022\Tests\TestSupport;
+namespace WebWhales\LaravelMultilingual\Tests\TestSupport;
 
 use Illuminate\Database\Eloquent\Model;
-use WebWhales\DlfHackaton2022\Multilingual;
+use WebWhales\LaravelMultilingual\Multilingual;
 
 class TestModel extends Model
 {

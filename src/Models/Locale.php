@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace WebWhales\DlfHackaton2022\Models;
+namespace WebWhales\LaravelMultilingual\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
