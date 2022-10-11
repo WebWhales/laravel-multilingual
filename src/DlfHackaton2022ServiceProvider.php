@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace WebWhales\DlfHackaton2022;
 
 use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Routing\Router;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 use WebWhales\DlfHackaton2022\Commands\DlfHackaton2022Command;
@@ -17,6 +18,13 @@ class DlfHackaton2022ServiceProvider extends PackageServiceProvider
         Blueprint::macro('multilingual', function (Blueprint $table) {
             $table->foreignIdFor(Locale::class);
         });
+
+        $this->headerWebMiddleware();
+    }
+
+    private function headerWebMiddleware(): void {
+        $router = $this->app->make(Router::class);
+        $router->pushMiddlewareToGroup('web', );
     }
 
     public function configurePackage(Package $package): void
