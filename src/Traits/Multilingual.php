@@ -65,8 +65,6 @@ trait Multilingual
 
     /**
      * Get the name of the "locale_id" column.
-     *
-     * @return string
      */
     public function getLocaleIdColumn(): string
     {
@@ -75,8 +73,6 @@ trait Multilingual
 
     /**
      * Get the fully qualified "locale_id" column.
-     *
-     * @return string
      */
     public function getQualifiedLocaleIdColumn(): string
     {

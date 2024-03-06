@@ -16,8 +16,6 @@ class MultilingualScope implements Scope
     /**
      * Apply the scope to a given Eloquent query builder.
      *
-     * @param  \Illuminate\Database\Eloquent\Builder  $builder
-     * @param  \Illuminate\Database\Eloquent\Model  $model
      * @return void
      */
     public function apply(Builder $builder, Model $model)
@@ -31,7 +29,6 @@ class MultilingualScope implements Scope
     /**
      * Extend the query builder with the needed functions.
      *
-     * @param  \Illuminate\Database\Eloquent\Builder  $builder
      * @return void
      */
     public function extend(Builder $builder)
@@ -54,7 +51,6 @@ class MultilingualScope implements Scope
     /**
      * Get the "locale_id" column for the builder.
      *
-     * @param  \Illuminate\Database\Eloquent\Builder  $builder
      * @return string
      */
     protected function getLocaleIdColumn(Builder $builder)
