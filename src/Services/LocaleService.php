@@ -91,4 +91,12 @@ class LocaleService
     {
         return $this->getLocaleIdByLocale(app()->getLocale());
     }
+
+    /**
+     * @throws LocaleNotFoundException
+     */
+    public function getCurrentLocale(): Locale
+    {
+        return $this->getLocaleModelByLocale(app()->getLocale());
+    }
 }
